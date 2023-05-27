@@ -7,6 +7,8 @@
 <body>
   <h1>Guia FDA</h1>
   
+  <button id="executeButton">Executar FDA</button>
+  
   <script>
     // Carrega o arquivo .wasm
     fetch('https://danielmcbr.github.io/topicbioequivalence/fda.wasm')
@@ -16,8 +18,15 @@
         // Obtém a instância do módulo WebAssembly
         const module = results.instance;
 
-        // Chama a função _main no módulo
-        module.exports._main();
+        // Função para executar o código FDA
+        function executeFDA() {
+          // Chama a função _main no módulo
+          module.exports._main();
+        }
+
+        // Adiciona um ouvinte de evento ao botão
+        const executeButton = document.getElementById('executeButton');
+        executeButton.addEventListener('click', executeFDA);
       })
       .catch(console.error);
   </script>
