@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Guia FDA</title>
+</head>
+<body>
+  <h1>Guia FDA</h1>
+  
+  <script>
+    // Carrega o arquivo .wasm
+    fetch('https://danielmcbr.github.io/topicbioequivalence/fda.wasm')
+      .then(response => response.arrayBuffer())
+      .then(bytes => WebAssembly.instantiate(bytes))
+      .then(results => {
+        // Obtém a instância do módulo WebAssembly
+        const module = results.instance;
+
+        // Chama a função _main no módulo
+        module.exports._main();
+      })
+      .catch(console.error);
+  </script>
+</body>
+</html>
+
