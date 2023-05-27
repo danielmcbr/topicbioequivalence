@@ -49,7 +49,8 @@ nav ul li a {
   margin-bottom: 20px;
 }
 
-#fdaButton {
+#fdaButton,
+#anvisaButton {
   background-color: #4CAF50;
   color: #fff;
   border: none;
@@ -57,9 +58,11 @@ nav ul li a {
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-#fdaButton:hover {
+#fdaButton:hover,
+#anvisaButton:hover {
   background-color: #45a049;
 }
 
